@@ -45,13 +45,15 @@ services:
     depends_on:
       - users
 
-  build:
-    context: ./services/node-tmp
-    dockerfile: Dockerfile
-  volumes:
-    - './services/node-tmp:/usr/src/app'
-    - '/usr/src/app/node_modules'
-  ports:
-    - 3000:${PORT}
-  environment:
-    - NODE_ENV=${NODE_ENV}
+  node-tmp:
+    build:
+      context: ./services/node-tmp
+      dockerfile: Dockerfile
+    volumes:
+      - './services/node-tmp:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    ports:
+      - 3000:${PORT}
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - PORT=${PORT}

@@ -50,8 +50,7 @@ phases:
           ./services/client
       - >
          docker build \
-         --target builder \
-          -f services/client/Dockerfile \
+          -f services/node-tmp/Dockerfile \
           -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/test-driven-node:prod \
           ./services/node-tmp
   post_build:

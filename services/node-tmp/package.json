@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "pm2-runtime start app.js -n node-app -f"
+    "start": "pm2-runtime start app.js -n node-app"
   },
   "author": "",
   "license": "ISC",
